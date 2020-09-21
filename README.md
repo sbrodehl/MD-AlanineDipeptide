@@ -68,16 +68,16 @@ To reproduce this work run the script [md.py](md.py), which runs all needed simu
 
 Here is a (probably incomplete) list with related material, which was used in this project. 
 
-- Cornell, Wendy D., et al. "A second generation force field for the simulation of proteins, nucleic acids, and organic molecules." Journal of the American Chemical Society 117.19 (1995): 5179-5197.
-- Hornak, Viktor, et al. "Comparison of multiple Amber force fields and development of improved protein backbone parameters." Proteins: Structure, Function, and Bioinformatics 65.3 (2006): 712-725.
-- Lindorff‐Larsen, Kresten, et al. "Improved side‐chain torsion potentials for the Amber ff99SB protein force field." Proteins: Structure, Function, and Bioinformatics 78.8 (2010): 1950-1958.
-- Buchete, Nicolae-Viorel, and Gerhard Hummer. "Coarse master equations for peptide folding dynamics." The Journal of Physical Chemistry B 112.19 (2008): 6057-6069.
-- Beauchamp, Kyle A., et al. "MSMBuilder2: modeling conformational dynamics on the picosecond to millisecond scale." Journal of chemical theory and computation 7.10 (2011): 3412-3419.
-- Sriraman, Saravanapriyan, Ioannis G. Kevrekidis, and Gerhard Hummer. "Coarse master equation from Bayesian analysis of replica molecular dynamics simulations." The Journal of Physical Chemistry B 109.14 (2005): 6479-6484.
-- Seeber, Michele, et al. "Wordom: a user‐friendly program for the analysis of molecular structures, trajectories, and free energy surfaces." Journal of computational chemistry 32.6 (2011): 1183-1194.
-- Van der Spoel, D., E. Lindahl, and B. Hess. "GROMACS User Manual version 4.6. 7." (2014).
-- Humphrey, William, Andrew Dalke, and Klaus Schulten. "VMD: visual molecular dynamics." Journal of molecular graphics 14.1 (1996): 33-38.
-- Michaud‐Agrawal, Naveen, et al. "MDAnalysis: a toolkit for the analysis of molecular dynamics simulations." Journal of computational chemistry 32.10 (2011): 2319-2327.
+- Cornell, Wendy D., et al. **"A second generation force field for the simulation of proteins, nucleic acids, and organic molecules."** Journal of the American Chemical Society 117.19 (1995): 5179-5197.
+- Hornak, Viktor, et al. **"Comparison of multiple Amber force fields and development of improved protein backbone parameters."** Proteins: Structure, Function, and Bioinformatics 65.3 (2006): 712-725.
+- Lindorff‐Larsen, Kresten, et al. **"Improved side‐chain torsion potentials for the Amber ff99SB protein force field."** Proteins: Structure, Function, and Bioinformatics 78.8 (2010): 1950-1958.
+- Buchete, Nicolae-Viorel, and Gerhard Hummer. **"Coarse master equations for peptide folding dynamics."** The Journal of Physical Chemistry B 112.19 (2008): 6057-6069.
+- Beauchamp, Kyle A., et al. **"MSMBuilder2: modeling conformational dynamics on the picosecond to millisecond scale."** Journal of chemical theory and computation 7.10 (2011): 3412-3419.
+- Sriraman, Saravanapriyan, Ioannis G. Kevrekidis, and Gerhard Hummer. **"Coarse master equation from Bayesian analysis of replica molecular dynamics simulations."** The Journal of Physical Chemistry B 109.14 (2005): 6479-6484.
+- Seeber, Michele, et al. **"Wordom: a user‐friendly program for the analysis of molecular structures, trajectories, and free energy surfaces."** Journal of computational chemistry 32.6 (2011): 1183-1194.
+- Van der Spoel, D., E. Lindahl, and B. Hess. **"GROMACS User Manual version 4.6. 7."** (2014).
+- Humphrey, William, Andrew Dalke, and Klaus Schulten. **"VMD: visual molecular dynamics."** Journal of molecular graphics 14.1 (1996): 33-38.
+- Michaud‐Agrawal, Naveen, et al. **"MDAnalysis: a toolkit for the analysis of molecular dynamics simulations."** Journal of computational chemistry 32.10 (2011): 2319-2327.
 
 
 [logo]: https://github.com/sbrodehl/MD-AlanineDipeptide/raw/master/plots/Alanine_Dipeptide_3D_Logo.png "Alanine Dipeptide"
