@@ -19,7 +19,7 @@ if __name__ == '__main__':
     samples = 20
 
     # first, run a long simulation
-    #run_macro_simulation(debug=DEBUG)
+    run_macro_simulation(debug=DEBUG)
 
     df = pd.DataFrame(read_xvg('data/md_long_nojump_rama.xvg'))
     df = apply_offset(df)
