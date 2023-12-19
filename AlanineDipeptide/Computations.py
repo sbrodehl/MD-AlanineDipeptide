@@ -11,7 +11,7 @@ from scipy.spatial import cKDTree
 from sklearn.cluster import MeanShift, estimate_bandwidth
 from tqdm import tqdm
 
-from Utilities import read_xvg
+from AlanineDipeptide.Utilities import read_xvg
 
 
 def clustering(df):
@@ -176,35 +176,45 @@ def run_micro_simulations(frames, n=10, debug=False):
 
 def run_macro_simulation(debug=False):
     # run the simulation
-    cmd = 'bash --login ../simulation/long/task_mpi.sh'
+    cmd = 'bash --login simulation/long/task_mpi.sh'
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    print("STDOUT:", proc.stdout)
+    print("STDERR:", proc.stderr)
+    print('task_mpi.sh done')
     (out, err) = proc.communicate()
     if proc.returncode:
-        raise Exception(err)
-
+       raise Exception(err)
+    print('new command')
     # copy gro file of the simulation
-    cmd = 'cp ../simulation/long/md.gro ../data/md_long.gro'
+    import os
+
+    # Get the current working directory
+    current_directory = os.getcwd()
+
+    # Print the current working directory
+    print("Current Working Directory:", current_directory)
+    cmd = 'cp simulation/long/md.gro data/md_long.gro'
     proc = subprocess.Popen(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     (out, err) = proc.communicate()
     if proc.returncode:
         raise Exception(err)
 
     # copy topol file of the simulation
-    cmd = 'cp ../simulation/long/topol.top ../data/md_long.top'
+    cmd = 'cp simulation/long/topol.top data/md_long.top'
     proc = subprocess.Popen(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     (out, err) = proc.communicate()
     if proc.returncode:
         raise Exception(err)
 
     # copy xtc trajectory file of the simulation
-    cmd = 'cp ../simulation/long/md_corr.xtc ../data/md_long_corr.xtc'
+    cmd = 'cp simulation/long/md_corr.xtc data/md_long_corr.xtc'
     proc = subprocess.Popen(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     (out, err) = proc.communicate()
     if proc.returncode:
         raise Exception(err)
 
     # save rama file to data folder
-    cmd = 'cp ../simulation/long/rama.xvg ../data/md_long_nojump_rama.xvg'
+    cmd = 'cp simulation/long/rama.xvg data/md_long_nojump_rama.xvg'
     proc = subprocess.Popen(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     (out, err) = proc.communicate()
     if proc.returncode:
@@ -212,7 +222,7 @@ def run_macro_simulation(debug=False):
 
     # clean up afterwards
     if not debug:
-        cmd = 'bash --login ../simulation/long/cleanup.sh'
+        cmd = 'bash --login simulation/long/cleanup.sh'
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         (out, err) = proc.communicate()
         if proc.returncode:
