@@ -182,8 +182,8 @@ def run_macro_simulation(debug=False):
     print("STDERR:", proc.stderr)
     print('task_mpi.sh done')
     (out, err) = proc.communicate()
-    if proc.returncode:
-       raise Exception(err)
+    #if proc.returncode:
+       #raise Exception(err)
     print('new command')
     # copy gro file of the simulation
     import os

@@ -1,6 +1,6 @@
 ; Run parameters
 integrator	= md        ; leap-frog integrator
-nsteps		= 5 ; 100 ns
+nsteps		= 500000 ; 10 ns
 dt		    = 0.002		; 2 fs
 
 ; Output control
