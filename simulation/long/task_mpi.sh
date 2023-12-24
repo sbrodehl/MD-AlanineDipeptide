@@ -23,7 +23,7 @@ echo "--- creating water molecules ---"
 gmx solvate -o sol.gro -cp box.gro -cs spc216.gro -p topol.top || exit 1
 
 echo "--- adding NaCl in physiological concentration ---"
-gmx grompp -o iongen.tpr -c sol.gro -f em.mdp -nb gpu || exit 1
+gmx grompp -o iongen.tpr -c sol.gro -f em.mdp || exit 1
 echo "13\n" | gmx genion -o ionized.gro -s iongen.tpr -p topol.top -conc 0.15 || exit 1
 
 echo "--- running energy minimization ----"
