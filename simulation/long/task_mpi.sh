@@ -44,12 +44,12 @@ echo "--- init pressure ----"
 gmx grompp -o npt.tpr -f npt.mdp -c nvt.gro -p topol.top -r nvt.gro || exit 1
 
 #mpirun -np 1 gmx mdrun -deffnm npt || exit 1
-gmx mdrun -nt 1 -deffnm npt -nb gpu || exit 1
+gmx mdrun -nt 1 -deffnm npt || exit 1
 
 echo "--- final simulation ----"
 gmx grompp -o md.tpr -f md.mdp -c npt.gro || exit 1
 # mpirun -np 1 gmx mdrun -v -deffnm md || exit 1
-gmx mdrun -nt 1 -v -deffnm md -nb gpu
+gmx mdrun -nt 1 -v -deffnm md
 
 echo "--- write phi and psi angles to rama.xvg ---"
 gmx rama -f md.trr -s md.tpr || exit 1
