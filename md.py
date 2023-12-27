@@ -19,15 +19,16 @@ if __name__ == '__main__':
     samples = 20
 
     # first, run a long simulation
-    run_macro_simulation(debug=DEBUG)
+    #run_macro_simulation(debug=DEBUG)
 
-    df = pd.DataFrame(read_xvg('data/md_long_nojump_rama.xvg'))
+    df = pd.DataFrame(read_xvg('simulation/long/rama.xvg'))
     df = apply_offset(df)
 
     if df.shape[0] < 1000:
         print("Not enough steps saved for analysis.")
         print("Please configure .mdp for GROMACS simulation.")
         exit(1)
+    print(len(df))
 
     # draw point density
     create_ramachandran_plot(df, "")

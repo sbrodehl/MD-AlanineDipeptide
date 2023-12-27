@@ -54,8 +54,8 @@ gmx mdrun -nt 1 -v -deffnm md
 echo "--- write phi and psi angles to rama.xvg ---"
 gmx rama -f md.trr -s md.tpr || exit 1
 
-echo "--- write energy to energy.xvg---"
-echo "5 6 7 8 \\n" | gmx energy -f md.edr -o
+#echo "--- write energy to energy.xvg---"
+#echo "5 6 7 8 \\n" | gmx energy -f md.edr -o
 
 echo "--- convert trajectory (otherwise, atom is split on borders of box) ---"
 echo "0\n" | gmx trjconv -pbc nojump -f md.trr -o md_corr.xtc || exit 1
