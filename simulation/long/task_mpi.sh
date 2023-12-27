@@ -49,7 +49,7 @@ gmx mdrun -nt 1 -deffnm npt -v || exit 1
 echo "--- final simulation ----"
 gmx grompp -o md.tpr -f md.mdp -c npt.gro || exit 1
 # mpirun -np 1 gmx mdrun -v -deffnm md || exit 1
-gmx mdrun -nt 1 -v -deffnm md -v
+gmx mdrun -nt 1 -v -deffnm md
 
 echo "--- write phi and psi angles to rama.xvg ---"
 gmx rama -o temp300conc015.xvg -f md.trr -s md.tpr || exit 1
