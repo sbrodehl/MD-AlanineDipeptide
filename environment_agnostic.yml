@@ -1,0 +1,12 @@
+name: test
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pandas
+  - gromacs
+  - matplotlib
+  - python=3.11
+  - mdanalysis==2.6.1
+  - sympy
+prefix: /home/zmk25/.conda/envs/test
