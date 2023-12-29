@@ -21,7 +21,7 @@ if __name__ == '__main__':
     # first, run a long simulation
     #run_macro_simulation(debug=DEBUG)
 
-    df = pd.DataFrame(read_xvg('simulation/long/temp300conc015.xvg'))
+    df = pd.DataFrame(read_xvg('simulation/long/temp300conc005.xvg'))
     df = apply_offset(df)
 
     if df.shape[0] < 1000:
