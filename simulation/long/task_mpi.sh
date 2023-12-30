@@ -24,7 +24,7 @@ gmx solvate -o sol.gro -cp box.gro -cs spc216.gro -p topol.top || exit 1
 
 echo "--- adding NaCl in physiological concentration ---"
 gmx grompp -o iongen.tpr -c sol.gro -f em.mdp || exit 1
-echo "13\n" | gmx genion -o ionized.gro -s iongen.tpr -p topol.top -conc 0.05 || exit 1
+echo "13\n" | gmx genion -o ionized.gro -s iongen.tpr -p topol.top -conc 0.10 || exit 1
 
 echo "--- running energy minimization ----"
 gmx grompp -o em.tpr -f em.mdp -c ionized.gro || exit 1
@@ -52,7 +52,7 @@ gmx grompp -o md.tpr -f md.mdp -c npt.gro || exit 1
 gmx mdrun -nt 4 -v -deffnm md
 
 echo "--- write phi and psi angles to rama.xvg ---"
-gmx rama -o 10ns_temp350conc005.xvg -f md.trr -s md.tpr || exit 1
+gmx rama -o 10ns_temp350conc010.xvg -f md.trr -s md.tpr || exit 1
 
 #echo "--- write energy to energy.xvg---"
 #echo "5 6 7 8 \\n" | gmx energy -f md.edr -o
