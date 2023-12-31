@@ -29,7 +29,7 @@ echo "13\n" | gmx genion -o ionized.gro -s iongen.tpr -p topol.top -conc 0.05 ||
 echo "--- running energy minimization ----"
 gmx grompp -o em.tpr -f em.mdp -c ionized.gro || exit 1
 #mpirun -np 1 gmx mdrun -deffnm em || exit 1
-gmx mdrun -nt 2 -deffnm em|| exit 1
+gmx mdrun -nt 4 -deffnm em|| exit 1
 
 
 echo "--- init temperature ----"
@@ -38,18 +38,18 @@ gmx grompp -o nvt.tpr -f nvt.mdp -c em.gro -p topol.top -r em.gro || exit 1
 
 
 #mpirun -np 1 gmx mdrun -deffnm nvt || exit 1
-gmx mdrun -nt 2 -deffnm nvt|| exit 1
+gmx mdrun -nt 4 -deffnm nvt|| exit 1
 
 echo "--- init pressure ----"
 gmx grompp -o npt.tpr -f npt.mdp -c nvt.gro -p topol.top -r nvt.gro || exit 1
 
 #mpirun -np 1 gmx mdrun -deffnm npt || exit 1
-gmx mdrun -nt 2 -deffnm npt -v || exit 1
+gmx mdrun -nt 4 -deffnm npt -v || exit 1
 
 echo "--- final simulation ----"
 gmx grompp -o md.tpr -f md.mdp -c npt.gro || exit 1
 # mpirun -np 1 gmx mdrun -v -deffnm md || exit 1
-gmx mdrun -nt 2 -v -deffnm md
+gmx mdrun -nt 4 -v -deffnm md
 
 echo "--- write phi and psi angles to rama.xvg ---"
 gmx rama -o 10ns_temp280conc005.xvg -f md.trr -s md.tpr || exit 1
