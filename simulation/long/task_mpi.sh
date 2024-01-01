@@ -52,7 +52,7 @@ gmx grompp -o md.tpr -f md.mdp -c npt.gro || exit 1
 gmx mdrun -nt 4 -v -deffnm md
 
 echo "--- write phi and psi angles to rama.xvg ---"
-gmx rama -o 10ns_temp360conc025.xvg -f md.trr -s md.tpr || exit 1
+gmx rama -o 10ns_temp350conc025.xvg -f md.trr -s md.tpr || exit 1
 
 #echo "--- write energy to energy.xvg---"
 #echo "5 6 7 8 \\n" | gmx energy -f md.edr -o
